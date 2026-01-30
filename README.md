@@ -1,6 +1,6 @@
 # FullStackOpen2022_Part6
 
-# 6a 
+## 6a Flux-architecture and Redux
 - [x] Flux-architecture
 - [ ] Redux
 
