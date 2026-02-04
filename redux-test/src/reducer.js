@@ -15,12 +15,17 @@ const counterReducer = (state = 0, action) => {
 
 const store = createStore(counterReducer);
 
-console.log(store.getState()); // 0
+store.subscribe(() => {
+    const storeNow = store.getState();
+    console.log('Current state:', storeNow);
+});
+
+// console.log(store.getState()); // 0
 
 store.dispatch({ type: 'INCREMENT' });
 store.dispatch({ type: 'INCREMENT' });
 store.dispatch({ type: 'INCREMENT' });
-console.log(store.getState()); // 3
+// console.log(store.getState()); // 3
 store.dispatch({ type: 'ZERO' });
 store.dispatch({ type: 'DECREMENT' });
-console.log(store.getState()); // -1
+// console.log(store.getState()); // -1
