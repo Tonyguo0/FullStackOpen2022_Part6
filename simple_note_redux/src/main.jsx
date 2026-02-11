@@ -2,15 +2,7 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './index.css';
 import { createStore } from 'redux';
-
-const noteReducer = (state = [], action) => {
-    switch (action.type) {
-        case 'NEW_NOTE':
-            return state.concat(action.payload);
-        default:
-            return state;
-    }
-};
+import noteReducer from './reducers/noteReducer';
 
 const store = createStore(noteReducer);
 
@@ -24,10 +16,10 @@ store.dispatch({
 });
 
 store.dispatch({
-    type: 'NEW_NOTE',
+    type: 'TOGGLE_IMPORTANCE',
     payload: {
         content: `stage changes are made with actions`,
-        important: false,
+        important: true,
         id: 2
     }
 });

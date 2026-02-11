@@ -5,8 +5,9 @@
 - [x] Redux
 - [x] A note about the use of createStore
 - [x] Redux-notes
-- [ ] Pure functions, immutable
-
+- [x] Pure functions, immutable
+- [x] Configuring the test environment
+- [ ] Tests for noteReducer
 
 ## Note
 - The code is written into files ending with .js that are run by issuing the command `node name_of_file.js`
@@ -23,3 +24,5 @@
         }
     }
 ```
+
+- The reducer function is a pure function that takes the current state and an action as arguments and returns a new state based on the action type. It should not mutate the existing state but instead return a new state object. In the example, we use `state.concat(action.payload)` to create a new array with the new note added, rather than using `array.push()` which would mutate the existing state array.
