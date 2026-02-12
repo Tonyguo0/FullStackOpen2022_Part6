@@ -4,8 +4,15 @@ const noteReducer = (state = [], action) => {
             // using concat to create a new array with the new note added
             // this way we avoid mutating the existing state array with array.push()
             return state.concat(action.payload);
-        case 'TOGGLE_IMPORTANCE':
-            return state.concat(action.payload);
+        case 'TOGGLE_IMPORTANCE': {
+            const id = action.payload.id;
+            const noteToChange = state.find((n) => n.id === id);
+            const changedNote = {
+                ...noteToChange,
+                important: !noteToChange.important
+            };
+            return state.map((note) => (note.id !== id ? note : changedNote));
+        }
         default:
             return state;
     }

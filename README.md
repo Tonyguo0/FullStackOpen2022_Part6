@@ -26,3 +26,5 @@
 ```
 
 - The reducer function is a pure function that takes the current state and an action as arguments and returns a new state based on the action type. It should not mutate the existing state but instead return a new state object. In the example, we use `state.concat(action.payload)` to create a new array with the new note added, rather than using `array.push()` which would mutate the existing state array.
+
+- The `deepFreeze` function is used to ensure that the state object is not mutated during the tests. It recursively freezes the object and all of its nested properties, making it immutable. This helps to catch any accidental mutations in the reducer function, as any attempt to modify the frozen state will throw an error.
