@@ -7,7 +7,8 @@
 - [x] Redux-notes
 - [x] Pure functions, immutable
 - [x] Configuring the test environment
-- [ ] Tests for noteReducer
+- [x] Tests for noteReducer
+- [ ] Array spread syntax
 
 ## Note
 - The code is written into files ending with .js that are run by issuing the command `node name_of_file.js`
