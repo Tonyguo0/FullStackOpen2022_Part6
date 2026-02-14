@@ -1,6 +1,6 @@
 :root {
 
-  /* text-align: center; */
+  text-align: center;
   /* default display is block */
   display: flex; 
   justify-content: center;

@@ -3,7 +3,10 @@ const noteReducer = (state = [], action) => {
         case 'NEW_NOTE':
             // using concat to create a new array with the new note added
             // this way we avoid mutating the existing state array with array.push()
-            return state.concat(action.payload);
+            // return state.concat(action.payload);
+
+            // using spread operator to create a new array with the new note added
+            return [...state, action.payload];
         case 'TOGGLE_IMPORTANCE': {
             const id = action.payload.id;
             // search for specific note object, the importance of which we want to toggle
