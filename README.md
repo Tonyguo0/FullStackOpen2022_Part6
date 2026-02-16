@@ -9,7 +9,9 @@
 - [x] Configuring the test environment
 - [x] Tests for noteReducer
 - [x] Array spread syntax
-- [ ] Uncontrolled form
+- [x] Uncontrolled form
+- [x] Action creators
+- [ ] Forwarding Redux Store to various components
 
 ## Note
 - The code is written into files ending with .js that are run by issuing the command `node name_of_file.js`
