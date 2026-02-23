@@ -1,16 +1,30 @@
 import { StrictMode } from 'react';
-import { ReactDOM } from 'react-dom/client';
+import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import App from './App';
 import './index.css';
 import noteReducer from './reducers/noteReducer';
 
-
 const store = createStore(noteReducer);
+store.dispatch({
+    type: 'NEW_NOTE',
+    payload: {
+        content: `the app state is in redux store`,
+        important: false,
+        id: 1
+    }
+});
 
-
-ReactDOM.createRoot(document.getElementById('root')).render(
+store.dispatch({
+    type: 'NEW_NOTE',
+    payload: {
+        content: `stage changes are made with actions`,
+        important: true,
+        id: 2
+    }
+});
+createRoot(document.getElementById('root')).render(
     <StrictMode>
         <Provider store={store}>
             <App />
@@ -18,10 +32,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </StrictMode>
 );
 
-
 // renderApp();
 // store.subscribe(renderApp);
-
 
 // store.dispatch({
 //     type: 'NEW_NOTE',
