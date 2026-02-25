@@ -12,7 +12,12 @@
 - [x] Uncontrolled form
 - [x] Action creators
 - [x] Forwarding Redux Store to various components
-- [ ] More components
+- [x] More components
+
+## 6b Many reducers
+- [ ] Store with complex state
+
+
 
 ## Note
 - The code is written into files ending with .js that are run by issuing the command `node name_of_file.js`
